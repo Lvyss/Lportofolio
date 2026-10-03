@@ -276,22 +276,22 @@ supabase/
 Status: `[ ]` belum | `[~]` sedang | `[x]` selesai
 
 ### Fase 0: Persiapan
-- [ ] Buat repo GitHub dan branch `main` + `dev`
-- [ ] Inisialisasi Next.js + TypeScript + Tailwind + ESLint
-- [ ] Buat project Supabase, simpan kredensial di `.env.local`
-- [ ] Buat `.env.example`, pastikan `.env.local` ada di `.gitignore`
-- [ ] Hubungkan repo ke Vercel (preview deployment aktif)
+- [x] Buat repo GitHub dan branch `main` + `dev`
+- [x] Inisialisasi Next.js + TypeScript + Tailwind + ESLint
+- [x] Buat project Supabase, simpan kredensial di `.env.local`
+- [x] Buat `.env.example`, pastikan `.env.local` ada di `.gitignore`
+- [x] Hubungkan repo ke Vercel (preview deployment aktif)
 
 **Selesai jika:** halaman kosong ter-deploy ke Vercel.
 
 ### Fase 1: Fondasi Database dan Auth
-- [ ] Tulis migrasi tabel (7.1) dan fungsi `is_admin()`
-- [ ] Aktifkan RLS dan buat policy setiap tabel
-- [ ] Buat bucket `media` beserta policy
-- [ ] Setup klien Supabase (browser, server, middleware)
-- [ ] Halaman `/admin/login` dan proteksi route `/admin/*`
-- [ ] Tambahkan akun admin ke tabel `admins`
-- [ ] Generate tipe TypeScript dari skema
+- [x] Tulis migrasi tabel (7.1) dan fungsi `is_admin()`
+- [x] Aktifkan RLS dan buat policy setiap tabel
+- [x] Buat bucket `media` beserta policy
+- [x] Setup klien Supabase (browser, server, middleware)
+- [x] Halaman `/admin/login` dan proteksi route `/admin/*`
+- [x] Tambahkan akun admin ke tabel `admins`
+- [x] Generate tipe TypeScript dari skema
 
 **Selesai jika:** login berhasil, akses `/admin` tanpa login diarahkan ke login,
 dan pengunjung tidak bisa menulis data lewat API.
@@ -449,3 +449,4 @@ Format mengikuti Keep a Changelog; versi mengikuti Semantic Versioning.
 |---|-----------|--------|---------|
 | 001 | Next.js App Router + Supabase | Gratis, satu ekosistem, mudah deploy | 2026-10-02 |
 | 002 | Satu admin, tabel `admins` + RLS | Sederhana, aman | 2026-10-02 |
+| 003 | Proteksi admin berlapis (proxy + layout + RLS), signup dimatikan | Satu admin, tidak ada akun asing yang bisa masuk | 2026-10-03 |
