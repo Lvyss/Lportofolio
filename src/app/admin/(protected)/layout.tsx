@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { logout } from "@/lib/actions/auth";
+import { AdminSidebar } from "@/components/admin/sidebar";
 
 export const metadata: Metadata = {
   title: "Admin",
@@ -24,16 +25,20 @@ export default async function ProtectedLayout({
   if (!isAdmin) redirect("/admin/login");
 
   return (
-    <div className="min-h-screen">
-      <header className="flex items-center justify-between border-b px-6 py-3">
-        <span className="text-sm font-medium">Admin Panel</span>
-        <form action={logout}>
-          <button type="submit" className="text-sm underline">
+    <div className="flex min-h-screen flex-col md:flex-row">
+      <aside className="border-b md:w-56 md:border-b-0 md:border-r">
+        <div className="px-6 py-4 text-sm font-semibold">Admin Panel</div>
+        <AdminSidebar />
+        <form action={logout} className="p-3">
+          <button
+            type="submit"
+            className="w-full rounded-md border px-3 py-2 text-sm"
+          >
             Logout
           </button>
         </form>
-      </header>
-      <div className="p-6">{children}</div>
+      </aside>
+      <div className="flex-1 p-6">{children}</div>
     </div>
   );
 }
