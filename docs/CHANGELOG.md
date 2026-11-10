@@ -15,3 +15,4 @@ Format mengikuti Keep a Changelog; versi mengikuti Semantic Versioning.
 - Migrasi skema, RLS, dan bucket storage `media` (supabase/migrations 0001-0003)
 - Klien Supabase (browser, server, proxy) dan tipe database
 - Login admin dengan proteksi route `/admin/*`
+- Komponen admin DataTable dan ImageUploader (upload ke Supabase Storage)
